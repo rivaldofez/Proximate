@@ -10,8 +10,10 @@ import MapKit
 
 class ViewController: UIViewController {
     
+    var locationManager: CLLocationManager?
+    
     lazy var mapView: MKMapView = {
-       let map = MKMapView()
+        let map = MKMapView()
         map.showsUserLocation = true
         map.translatesAutoresizingMaskIntoConstraints = false
         return map
@@ -31,6 +33,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //initialize location manager
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        
+        locationManager?.requestWhenInUseAuthorization()
+        locationManager?.requestLocation()
+        
+        
         // Do any additional setup after loading the view.
         setupUI()
     }
@@ -51,17 +62,50 @@ class ViewController: UIViewController {
         
         view.addSubview(mapView)
         view.bringSubviewToFront(searchTextField)
+        
         //add constraint mapview
         NSLayoutConstraint.activate([
             mapView.widthAnchor.constraint(equalTo: view.widthAnchor),
             mapView.heightAnchor.constraint(equalTo: view.heightAnchor),
             mapView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             mapView.centerYAnchor.constraint(equalTo: view.centerYAnchor)
-            
-        
         ])
         
     }
+    
+    private func checkLocationAuthorization(){
+        guard let locationManager = locationManager,
+              let location = locationManager.location else { return }
+        
+        switch locationManager.authorizationStatus {
+            
+        case .authorizedWhenInUse, .authorizedAlways:
+            print("")
+            let region = MKCoordinateRegion(center: location.coordinate, latitudinalMeters: 750, longitudinalMeters: 750)
+            mapView.setRegion(region, animated: true)
+        case .denied:
+            print("Location services has been denied")
+        case .notDetermined, .restricted:
+            print("Location restricted or cannot be determined")
+        @unknown default:
+            print("Error occured")
+            
+        }
+    }
+}
 
+
+extension ViewController: CLLocationManagerDelegate {
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkLocationAuthorization()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error)
+    }
 }
 
