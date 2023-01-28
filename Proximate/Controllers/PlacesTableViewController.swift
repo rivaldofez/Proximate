@@ -10,7 +10,7 @@ import MapKit
 
 class PlacesTableViewController: UITableViewController {
     var userLocation: CLLocation
-    let places: [PlaceAnnotation]
+    var places: [PlaceAnnotation]
     
     init(userLocation: CLLocation, places: [PlaceAnnotation]) {
         self.userLocation = userLocation
@@ -18,6 +18,11 @@ class PlacesTableViewController: UITableViewController {
         super.init(nibName: nil, bundle: nil)
         
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "place_cell")
+        self.places.swapAt(indexForSelectionRow ?? 0, 0)
+    }
+    
+    private var indexForSelectionRow: Int? {
+        self.places.firstIndex(where: { $0.isSelected == true })
     }
     
     private func calculateDistance(from: CLLocation, to: CLLocation) -> CLLocationDistance{
@@ -46,6 +51,7 @@ class PlacesTableViewController: UITableViewController {
         content.secondaryText = formatDistanceForDisplay(distance)
         
         cell.contentConfiguration = content
+        cell.backgroundColor = place.isSelected ? UIColor.lightGray : UIColor.clear
         return cell
     }
     
