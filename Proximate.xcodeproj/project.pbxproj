@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E7CE6F329855E870088387E /* PlaceAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CE6F229855E870088387E /* PlaceAnnotation.swift */; };
+		7E7CE6F9298560DC0088387E /* CLLocation+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E7CE6F8298560DC0088387E /* CLLocation+Extension.swift */; };
 		7EF288F129853BBC00B5AA2D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF288F029853BBC00B5AA2D /* AppDelegate.swift */; };
 		7EF288F329853BBC00B5AA2D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF288F229853BBC00B5AA2D /* SceneDelegate.swift */; };
 		7EF288F529853BBC00B5AA2D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EF288F429853BBC00B5AA2D /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7E7CE6F229855E870088387E /* PlaceAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaceAnnotation.swift; sourceTree = "<group>"; };
+		7E7CE6F8298560DC0088387E /* CLLocation+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extension.swift"; sourceTree = "<group>"; };
 		7EF288ED29853BBC00B5AA2D /* Proximate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Proximate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7EF288F029853BBC00B5AA2D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7EF288F229853BBC00B5AA2D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +41,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E7CE6F429855E8D0088387E /* Annotation */ = {
+			isa = PBXGroup;
+			children = (
+				7E7CE6F229855E870088387E /* PlaceAnnotation.swift */,
+			);
+			path = Annotation;
+			sourceTree = "<group>";
+		};
+		7E7CE6F529855FFF0088387E /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				7E7CE6F8298560DC0088387E /* CLLocation+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		7EF288E429853BBC00B5AA2D = {
 			isa = PBXGroup;
 			children = (
@@ -56,6 +76,8 @@
 		7EF288EF29853BBC00B5AA2D /* Proximate */ = {
 			isa = PBXGroup;
 			children = (
+				7E7CE6F529855FFF0088387E /* Extension */,
+				7E7CE6F429855E8D0088387E /* Annotation */,
 				7EF288F029853BBC00B5AA2D /* AppDelegate.swift */,
 				7EF288F229853BBC00B5AA2D /* SceneDelegate.swift */,
 				7EF288F429853BBC00B5AA2D /* ViewController.swift */,
@@ -138,9 +160,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7E7CE6F329855E870088387E /* PlaceAnnotation.swift in Sources */,
 				7EF288F529853BBC00B5AA2D /* ViewController.swift in Sources */,
 				7EF288F129853BBC00B5AA2D /* AppDelegate.swift in Sources */,
 				7EF288F329853BBC00B5AA2D /* SceneDelegate.swift in Sources */,
+				7E7CE6F9298560DC0088387E /* CLLocation+Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
