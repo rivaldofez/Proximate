@@ -93,7 +93,23 @@ class PlaceDetailViewController: UIViewController {
         
         view.addSubview(stackView)
         
-
+        directionButton.addTarget(self, action: #selector(directionButtonTapped), for: .touchUpInside)
+        
+        callButton.addTarget(self, action: #selector(callButtonTapped), for: .touchUpInside)
     
+    }
+    
+    @objc func callButtonTapped(_ sender: UIButton){
+        print(place.phone.formatPhoneForCall)
+        guard let url = URL(string: "tel://\(place.phone.formatPhoneForCall)") else { return }
+        UIApplication.shared.open(url)
+        
+    }
+    
+    @objc func directionButtonTapped(_ sender: UIButton) {
+        let coordinate = place.location.coordinate
+        guard let url = URL(string:  "http://maps.apple.com/?daddr=\(coordinate.latitude),\(coordinate.longitude)") else { return }
+        
+        UIApplication.shared.open(url)
     }
 }
