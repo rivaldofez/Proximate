@@ -95,7 +95,10 @@ class ViewController: UIViewController {
     }
     
     private func presentPlacesSheet(places: [PlaceAnnotation]){
-        let placesTableViewController = PlacesTableViewController()
+        
+        guard let locationManager = locationManager, let userLocation = locationManager.location else { return }
+        
+        let placesTableViewController = PlacesTableViewController(userLocation: userLocation , places: places)
         placesTableViewController.modalPresentationStyle = .pageSheet
         
         if let sheet = placesTableViewController.sheetPresentationController {
