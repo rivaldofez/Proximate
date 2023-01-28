@@ -22,6 +22,7 @@ class ViewController: UIViewController {
     lazy var searchTextField: UITextField = {
         let searchTextField = UITextField()
         searchTextField.layer.cornerRadius = 10
+        searchTextField.delegate = self
         searchTextField.clipsToBounds = true
         searchTextField.backgroundColor = .white
         searchTextField.placeholder = "Search"
@@ -92,6 +93,10 @@ class ViewController: UIViewController {
             
         }
     }
+    
+    private func findNearbyPlaces(by query: String){
+        
+    }
 }
 
 
@@ -109,3 +114,14 @@ extension ViewController: CLLocationManagerDelegate {
     }
 }
 
+extension ViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let text = textField.text ?? ""
+        if !text.isEmpty {
+            textField.resignFirstResponder()
+            //find nearby places
+        }
+        
+        return true
+    }
+}
