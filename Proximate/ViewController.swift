@@ -95,7 +95,18 @@ class ViewController: UIViewController {
     }
     
     private func findNearbyPlaces(by query: String){
+        //clear annotations in maps
+        mapView.removeAnnotations(mapView.annotations)
         
+        let request = MKLocalSearch.Request()
+        request.naturalLanguageQuery = query
+        request.region = mapView.region
+        
+        let search = MKLocalSearch(request: request)
+        search.start { response, error in
+            guard let response = response, error == nil else { return }
+            print(response.mapItems)
+        }
     }
 }
 
@@ -119,7 +130,9 @@ extension ViewController: UITextFieldDelegate {
         let text = textField.text ?? ""
         if !text.isEmpty {
             textField.resignFirstResponder()
+            
             //find nearby places
+            findNearbyPlaces(by: text)
         }
         
         return true
