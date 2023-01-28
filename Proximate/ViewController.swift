@@ -17,7 +17,18 @@ class ViewController: UIViewController {
         return map
     }()
     
-
+    lazy var searchTextField: UITextField = {
+        let searchTextField = UITextField()
+        searchTextField.layer.cornerRadius = 10
+        searchTextField.clipsToBounds = true
+        searchTextField.backgroundColor = .white
+        searchTextField.placeholder = "Search"
+        searchTextField.leftView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: 0))
+        searchTextField.leftViewMode = .always
+        searchTextField.translatesAutoresizingMaskIntoConstraints = false
+        return searchTextField
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -25,8 +36,21 @@ class ViewController: UIViewController {
     }
     
     private func setupUI(){
-        view.addSubview(mapView)
         
+        view.addSubview(searchTextField)
+        
+        //add constraint searchTextField
+        NSLayoutConstraint.activate([
+            searchTextField.heightAnchor.constraint(equalToConstant: 44),
+            searchTextField.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            searchTextField.widthAnchor.constraint(equalToConstant: view.bounds.size.width / 1.2),
+            searchTextField.topAnchor.constraint(equalTo: view.topAnchor, constant: 60)
+        ])
+        searchTextField.returnKeyType = .go
+        
+        
+        view.addSubview(mapView)
+        view.bringSubviewToFront(searchTextField)
         //add constraint mapview
         NSLayoutConstraint.activate([
             mapView.widthAnchor.constraint(equalTo: view.widthAnchor),
