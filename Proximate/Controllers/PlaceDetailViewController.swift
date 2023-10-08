@@ -17,6 +17,7 @@ class PlaceDetailViewController: UIViewController {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .title1)
+        label.textColor = .label
         return label
     }()
     
@@ -26,6 +27,7 @@ class PlaceDetailViewController: UIViewController {
         label.textAlignment = .left
         label.font = .preferredFont(forTextStyle: .body)
         label.alpha = 0.4
+        label.textColor = .secondaryLabel
         return label
     }()
     
