@@ -11,11 +11,13 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <h3 align="center">Proximate</h3>
+  <a href="https://github.com/rivaldofez/Proximate">
+    <img src="images/Logo.png" alt="Logo"height="80">
+  </a>
+
+  <h3 align="center">Find Your Game</h3>
   </br>
 </div>
-
-
 
 <!-- TABLE OF CONTENTS -->
 <details>
@@ -137,9 +139,9 @@ This apps in one of my project while learning MapKit and UIKit
 
 [stars-shield]: https://img.shields.io/github/stars/rivaldofez/Proximate.svg?style=for-the-badge
 
-[stars-url]: https://github.com/othneildrew/Best-README-Template/stargazers
+[stars-url]: https://github.com/rivaldofez/Proximate/stargazers
 
-[issues-shield]: https://img.shields.io/github/issues/othneildrew/Best-README-Template.svg?style=for-the-badge
+[issues-shield]: https://img.shields.io/github/issues/rivaldofez/Proximate.svg?style=for-the-badge
 
 [issues-url]: https://github.com/rivaldofez/Proximate/issues
 
