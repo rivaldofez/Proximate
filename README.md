@@ -12,7 +12,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/rivaldofez/Proximate">
-    <img src="images/Logo.png" alt="Logo"height="80">
+    <img src="images/logo.png" alt="Logo"height="80">
   </a>
 
   <h3 align="center">Find Your Game</h3>
@@ -48,11 +48,11 @@
 ## About The Project
 
 <p align="middle">
-  <img src="images/Image_5.png" width="150" />
-  <img src="images/Image_4.png" width="150" /> 
-  <img src="images/Image_3.png" width="150" />
-  <img src="images/Image_2.png" width="150" />
-  <img src="images/Image_1.png" width="150" /> 
+  <img src="images/image_5.png" width="150" />
+  <img src="images/image_4.png" width="150" /> 
+  <img src="images/image_3.png" width="150" />
+  <img src="images/image_2.png" width="150" />
+  <img src="images/image_1.png" width="150" /> 
 </p>
 
 Proximate is an apps to find your nearby interest place and show the location with map. If you want the directions, you can simply click directions and you will be redirected to Apple Maps and get detail of the directions.
