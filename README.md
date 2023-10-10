@@ -15,7 +15,7 @@
     <img src="images/logo.png" alt="Logo"height="80">
   </a>
 
-  <h3 align="center">Find Your Game</h3>
+  <h3 align="center">Easy Way to Search Nearby Places</h3>
   </br>
 </div>
 
